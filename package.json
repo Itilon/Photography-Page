@@ -1,0 +1,25 @@
+{
+  "name": "photography-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Yuri Ivanov",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.2",
+    "font-awesome": "^4.7.0",
+    "gulp-nodemon": "^2.2.1",
+    "jquery": "^3.2.1",
+    "mongodb": "^2.2.30",
+    "particles.js": "^2.0.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

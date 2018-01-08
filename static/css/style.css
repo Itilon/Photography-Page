@@ -1,0 +1,58 @@
+main {
+    --element-position: absolute;
+    --element-size-large: 2rem;
+    --element-size-mid: 1.6rem;
+    --element-border-radius: 4px;
+    --element-color-white: #ffffff;
+    --element-color-grey: #898989;
+    --element-color-black: #000000;
+    --element-color-green: #01bab0;
+    --element-style-italic: italic;
+    --element-border-grey: rgba(255, 255, 255, 0.1);
+}
+#particles-js {
+    height: 100vh;
+    background-color: var(--element-color-black);
+}
+#navigation {
+    position: var(--element-position);
+    top: 36px;
+    left: 64px;
+    width: 18vw;
+    height: 80vh;
+    padding: 20px 0;
+    background-color: rgba(90, 90, 90, 0.6);
+    border: 1px solid var(--element-border-grey);
+    border-radius: var(--element-border-radius);
+}
+#navigation h1 {
+    font-size: var(--element-size-large);
+    font-style: var(--element-style-italic);
+    color: var(--element-color-white);
+    padding-left: 20px;
+}
+#navigation li {
+    border-bottom: 1px solid var(--element-border-grey);
+    padding: 12px 20px;
+}
+#navigation li:last-child {
+    border-bottom: none;
+}
+#navigation li:hover {
+    border-left: 2px solid var(--element-color-green);
+}
+#navigation a {
+    font-size: var(--element-size-mid);
+    color: var(--element-color-grey);
+}
+#navigation li:hover a {
+    color: var(--element-color-green);
+}
+#search-form {
+    padding: 20px;
+}
+#search-form input {
+    width: 100%;
+    height: 24px;
+    border-radius: var(--element-border-radius);
+}

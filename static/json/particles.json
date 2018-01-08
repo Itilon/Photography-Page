@@ -1,0 +1,40 @@
+{
+    "particles": {
+        "number": {
+            "value": 360,
+            "density": {
+                "enable": false
+            }
+        },
+        "color": {
+            "value": "#e7e7c5"
+        },
+        "shape": {
+            "type": "circle",
+            "polygon": {
+                "nb_sides": 10
+            }
+        },
+        "opacity": {
+            "value": 0.6,
+            "random": true
+        },
+        "size": {
+            "value": 4,
+            "random": true
+        },
+        "line-linked": {
+            "enable": true,
+            "distance": 120
+        },
+        "move": {
+            "enable": true,
+            "speed": 2
+        }
+    },
+    "interactivity": {
+        "events": {
+            "resize": false
+        }
+    }
+}
