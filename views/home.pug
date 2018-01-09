@@ -1,6 +1,10 @@
 extends shared/_master
 include shared/_navigation
+include shared/_slider
+include shared/_thumbnail-container
 
 block body
     main(id="particles-js")
         +navigation
+        +slider(images)
+        +thumbnail-container
