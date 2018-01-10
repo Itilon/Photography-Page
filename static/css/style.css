@@ -1,6 +1,11 @@
+@font-face {
+    font-family: Blessed Day;
+    src: url('/static/fonts/BLESD___.otf');
+}
 main {
     --element-position-absolute: absolute;
     --element-display-block: block;
+    --element-size-extralarge: 3.6rem;
     --element-size-large: 2rem;
     --element-size-mid: 1.6rem;
     --element-size-small: 1.4rem;
@@ -38,7 +43,8 @@ main {
     background-color: rgba(60, 60, 60, 0.6);
 }
 #navigation h1 {
-    font-size: var(--element-size-large);
+    font-family: Blessed Day;
+    font-size: var(--element-size-extralarge);
     font-style: var(--element-style-italic);
     color: var(--element-color-white);
     padding: 20px 0 20px 20px;
@@ -89,9 +95,23 @@ main {
     bottom: 36px;
     height: 16vh;
     width: var(--element-size-full);
+    padding: 10px 20px;
     background-color: rgba(180, 180, 180, 0.4);
     border: 1px solid var(--element-border-grey);
     box-shadow: 2px -2px 4px;
+}
+.thumbnail {
+    display: inline-block;
+    height: var(--element-size-full);
+    width: 10%;
+    margin: 0 15px;
+    background-size: cover;
+    opacity: 0.4;
+    transition: opacity 1.2s ease-in-out;
+}
+.thumbnail:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* SLIDER: */
@@ -122,4 +142,33 @@ main {
 }
 .slider-img:first-child {
     display: var(--element-display-block);
+}
+
+/* ABOUT AND CONTACT CONTAINER */
+
+#content-container {
+    position: var(--element-position-absolute);
+    top: 36px;
+    left: calc(64px + 20vw);
+    height: 80vh;
+    width: calc(100vw - (64px + 22vw));
+    background-color: rgba(27, 27, 27, 0.7);
+    border: 1px solid var(--element-border-grey);
+    border-radius: var(--element-border-radius);
+}
+
+#content-container h2 {
+    margin: 64px 0 0 48px;
+    font-size: var(--element-size-extralarge);
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--element-color-white);
+}
+
+#content-container p {
+    margin: 24px 48px;
+    line-height: var(--element-size-large);
+    font-size: var(--element-size-mid);
+    letter-spacing: 1px;
+    color: var(--element-color-white);
 }

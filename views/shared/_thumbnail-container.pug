@@ -1,2 +1,4 @@
-mixin thumbnail-container
+mixin thumbnail-container(images)
     div(id="thumbnail-container")
+        each image in images
+            div(class="thumbnail" style="background-image: url(../.." + image.url + ")")
