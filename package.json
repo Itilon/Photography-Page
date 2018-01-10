@@ -15,6 +15,7 @@
     "font-awesome": "^4.7.0",
     "gulp-nodemon": "^2.2.1",
     "jquery": "^3.2.1",
+    "jscrollpane": "^2.0.22",
     "mongodb": "^2.2.30",
     "particles.js": "^2.0.0",
     "pug": "^2.0.0-rc.4"

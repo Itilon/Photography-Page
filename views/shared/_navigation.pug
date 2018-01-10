@@ -1,17 +1,32 @@
 include _search
 
-mixin navigation
+mixin navigation(currentPage)
     nav(id="navigation")
         h1 So Much (For) Beauty
         ul
             li
-                a(href="/") Home
+                if currentPage == 'home' 
+                    a(class="current-page" href="/") Home
+                else
+                    a(href="/") Home
             li
-                a(href="/") About Me
+                if currentPage == 'about'
+                    a(class="current-page" href="/about") About Me
+                else
+                    a(href="/about") About Me
             li
-                a(href="/") Portfolio
+                if currentPage == 'portfolio'
+                    a(class="current-page" href="/portfolio") Portfolio
+                else
+                    a(href="/portfolio") Portfolio
             li
-                a(href="/") Blog
+                if currentPage == 'blog'
+                    a(class="current-page" href="/blog") Blog
+                else
+                    a(href="/blog") Blog
             li
-                a(href="/") Contact
+                if currentPage == 'contact'
+                    a(class="current-page" href="/contact") Contact
+                else
+                    a(href="/contact") Contact
             +search
