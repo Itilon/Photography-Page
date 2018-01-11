@@ -1,4 +1,5 @@
 mixin thumbnail-container(images)
     div(id="thumbnail-container")
         each image in images
-            div(class="thumbnail" style="background-image: url(../.." + image.url + ")")
+            div(class="thumbnail-unit" style="background-image: url(../.." + image.url + ")")
+                i(class="fa fa-search fa-3x fa-thumb" aria-hidden="true")

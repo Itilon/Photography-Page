@@ -1,16 +1,16 @@
 let index = 0;
 
 setInterval( () => {
-    const $slides = $('.slider-img');
+    const $sliderImgs = $('.slider-img');
 
-    $($slides[index]).slideUp(2400);
+    $($sliderImgs[index]).slideUp(1600);
 
     index++;
 
-    if (index === $slides.length) {
+    if (index === $sliderImgs.length) {
         index = 0;
     }
 
-    $($slides[index]).slideDown(2400);
+    $($sliderImgs[index]).slideDown(1600);
 
-}, 8000);
+}, 10000);
