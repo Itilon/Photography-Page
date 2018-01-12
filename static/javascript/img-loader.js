@@ -1,21 +1,23 @@
-const $thumbnails = $('.thumbnail-unit');
-const $sliderImgs = $('.slider-img');
+$(document).ready(() => {
+    const $thumbnails = $('.thumbnail-unit');
+    const $sliderImgs = $('.slider-img');
 
-$thumbnails.on('click', (thumbnail) => {
+    $thumbnails.on('click', function() {
 
-    let $elementClicked = $(thumbnail.target);
-    if ($elementClicked.hasClass('fa-thumb')) {
-        $elementClicked = $elementClicked.parent();
-    }
-
-    const thumbnailBackground = $elementClicked.css('background-image');
-
-    $sliderImgs.each((index) => {
-        const $image = $($sliderImgs[index]);
-        const backgroundImg = $image.css('background-image');
-        if (backgroundImg === thumbnailBackground) {
-            $sliderImgs.css('display', 'none');
-            $image.css('display', 'block');
+        let $this = $(this);
+        if ($this.hasClass('fa-thumb')) {
+            $this = $this.parent();
         }
+
+        const thumbnailBackground = $this.css('background-image');
+
+        $sliderImgs.each(function() {
+            const $this = $(this);
+            const backgroundImg = $this.css('background-image');
+            if (backgroundImg === thumbnailBackground) {
+                $sliderImgs.css('display', 'none');
+                $this.css('display', 'block');
+            }
+        });
     });
 });

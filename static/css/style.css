@@ -39,10 +39,23 @@ main {
     box-shadow: 2px 2px 4px;
     overflow-y: scroll;
 }
+
+/* Google Chrome Only: Start */
+
 #navigation::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
     background-color: rgba(60, 60, 60, 0.6);
 }
+#navigation::-webkit-scrollbar-thumb {
+    background-color: rgba(120, 120, 120, 0.2);
+    border-radius: var(--element-border-radius);
+}
+#navigation::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(120, 120, 120, 0.7);
+}
+
+/* Google Chrome Only: End */
+
 #navigation h1 {
     font-family: Blessed Day;
     font-size: var(--element-size-extralarge);
@@ -158,6 +171,20 @@ main {
 .slider-img:first-child {
     display: var(--element-display-block);
 }
+.progress-bar-container {
+    position: var(--element-position-absolute);
+    top: -6px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--element-color-white);
+}
+.progress-bar {
+    position: var(--element-position-absolute);
+    top: -7px;
+    height: 4px;
+    width: 0;
+    background-color: var(--element-color-green);
+}
 
 /* ABOUT AND CONTACT CONTAINER */
 
@@ -170,10 +197,31 @@ main {
     background-color: rgba(27, 27, 27, 0.7);
     border: 1px solid var(--element-border-grey);
     border-radius: var(--element-border-radius);
+    overflow-y: scroll;
+    transition: all 0.8s ease-in-out;
+}
+#content-container:hover {
+    background-color: rgba(27, 27, 27, 0.9);
 }
 
+/* Google Chrome Only: Start */
+
+#content-container::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(27, 27, 27, 0.7);
+}
+#content-container::-webkit-scrollbar-thumb {
+    background-color: rgba(120, 120, 120, 0.2);
+    border-radius: var(--element-border-radius);
+}
+#content-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(120, 120, 120, 0.7);
+}
+
+/* Google Chrome Only: End */
+
 #content-container h2 {
-    margin: 64px 0 0 48px;
+    margin: 64px 0 0 54px;
     font-size: var(--element-size-extralarge);
     font-weight: 600;
     letter-spacing: 2px;
@@ -181,9 +229,33 @@ main {
 }
 
 #content-container p {
-    margin: 24px 48px;
+    margin: 24px 54px;
     line-height: var(--element-size-large);
-    font-size: var(--element-size-mid);
+    font-size: var(--element-size-small);
     letter-spacing: 1px;
     color: var(--element-color-white);
+}
+
+/* CONTACT FORM */
+
+#contact-form {
+    margin: 36px 54px 0 54px;
+}
+#contact-form div {
+    width: var(--element-size-full);
+}
+#contact-form input, #contact-form textarea {
+    margin: 12px 0;
+    border: none;
+    border-radius: var(--element-border-radius);
+    background-color: #292929;
+}
+#contact-form input {
+    height: 42px;
+}
+#contact-form textarea {
+    height: 126px;
+}
+#contact-form input:focus, #contact-form textarea:focus {
+    background-color: #494949;
 }

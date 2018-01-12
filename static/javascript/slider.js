@@ -1,16 +1,18 @@
-let index = 0;
+$(document).ready(() => {
+    let index = 0;
 
-setInterval( () => {
-    const $sliderImgs = $('.slider-img');
+    setInterval(() => {
+        const $sliderImgs = $('.slider-img');
 
-    $($sliderImgs[index]).slideUp(1600);
+        $($sliderImgs[index]).slideUp(1600);
 
-    index++;
+        index++;
 
-    if (index === $sliderImgs.length) {
-        index = 0;
-    }
+        if (index === $sliderImgs.length) {
+            index = 0;
+        }
 
-    $($sliderImgs[index]).slideDown(1600);
+        $($sliderImgs[index]).slideDown(1600);
 
-}, 10000);
+    }, 10000);
+});

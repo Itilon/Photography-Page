@@ -1,0 +1,4 @@
+1. Slider.js and img-loader.js communication should be synchronised.
+2. Img-loader.js and progress-bar.js communication shoud be synchronised.
+3. Progress-bar.js timing should be improved.
+4. Scrollbar must be styled for any browser other than Chrome.
