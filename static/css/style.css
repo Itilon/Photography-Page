@@ -4,6 +4,7 @@
 }
 main {
     --element-position-absolute: absolute;
+    --element-position-relative: relative;
     --element-display-block: block;
     --element-size-extralarge: 3.6rem;
     --element-size-large: 2rem;
@@ -61,7 +62,7 @@ main {
     font-size: var(--element-size-extralarge);
     font-style: var(--element-style-italic);
     color: var(--element-color-white);
-    padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 12px;
 }
 #navigation li {
     border-bottom: 1px solid var(--element-border-grey);
@@ -114,6 +115,24 @@ main {
     border: 1px solid var(--element-border-grey);
     box-shadow: 2px -2px 4px;
 }
+.arrow-container {
+    display: inline-block;
+    position: var(--element-position-relative);
+    height: var(--element-size-full);
+    width: 10%;
+    margin: 0 15px;
+}
+.fa-arrow-custom {
+    display: inline-block;
+    position: var(--element-position-absolute);
+    top: calc(50% - 24px);
+    left: calc(50% - 14px);
+    color: var(--element-color-grey);
+    opacity: 0.8;
+}
+.fa-arrow-custom:hover {
+    cursor: pointer;
+}
 .thumbnail-unit {
     display: inline-block;
     height: var(--element-size-full);
@@ -131,10 +150,10 @@ main {
     opacity: 1;
     cursor: pointer;
 }
-.fa-thumb {
+.fa-thumb-custom {
     display: none;
 }
-.thumbnail-unit:hover .fa-thumb {
+.thumbnail-unit:hover .fa-thumb-custom {
     display: inline-block;
     position: var(--element-position-absolute);
     top: calc(50% - 14px);
@@ -149,7 +168,7 @@ main {
     top: 36px;
     left: calc(64px + 20vw);
     height: 80vh;
-    width: calc(100vw - (64px + 22vw));
+    width: calc(100vw - (64px + 24vw));
     border: 1px solid var(--element-border-grey);
     border-radius: var(--element-border-radius);
 }
@@ -166,10 +185,11 @@ main {
     filter: grayscale(0);
 }
 .slider-img {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 .slider-img:first-child {
-    display: var(--element-display-block);
+    opacity: 1;
 }
 .progress-bar-container {
     position: var(--element-position-absolute);
@@ -193,7 +213,7 @@ main {
     top: 36px;
     left: calc(64px + 20vw);
     height: 80vh;
-    width: calc(100vw - (64px + 22vw));
+    width: calc(100vw - (64px + 24vw));
     background-color: rgba(27, 27, 27, 0.7);
     border: 1px solid var(--element-border-grey);
     border-radius: var(--element-border-radius);
