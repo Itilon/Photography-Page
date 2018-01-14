@@ -4,22 +4,21 @@ $(document).ready(() => {
 
     const $thumbnailUnits = $('.thumbnail-unit');
 
-    $thumbnailUnits.on('click', function() {
-        let $this = $(this);
-        index = $this.index() - 1;
-    });
-
-    setInterval(() => {
+    const slider = () => {
         $sliderImgs.css('opacity', '0');
 
         let $currentImg = $($sliderImgs[index]);
-        if (index === $sliderImgs.length) {
+        const len = $sliderImgs.length;
+
+        if (index === len) {
             $currentImg = $($sliderImgs[0]);
         }
+
         let $nextImg = $($sliderImgs[index + 1]);
-        if (index === $sliderImgs.length - 1) {
+
+        if (index === len - 1) {
             $nextImg = $($sliderImgs[0]);
-        } else if (index === $sliderImgs.length) {
+        } else if (index === len) {
             $nextImg = $($sliderImgs[1]);
         }
 
@@ -28,10 +27,17 @@ $(document).ready(() => {
 
         index++;
 
-        if (index === $sliderImgs.length) {
+        if (index === len) {
             index = 0;
         }
+    };
 
-    }, 10000);
+    let timer = setInterval(slider, 10000);
 
+    $thumbnailUnits.on('click', function() {
+        let $this = $(this);
+        index = $this.index() - 1;
+        clearInterval(timer);
+        timer = setInterval(slider, 10000);
+    });
 });

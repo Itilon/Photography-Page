@@ -171,6 +171,7 @@ main {
     width: calc(100vw - (64px + 24vw));
     border: 1px solid var(--element-border-grey);
     border-radius: var(--element-border-radius);
+    box-shadow: -2px -2px 4px;
 }
 .slider-content {
     height: var(--element-size-full);
@@ -206,7 +207,7 @@ main {
     background-color: var(--element-color-green);
 }
 
-/* ABOUT AND CONTACT CONTAINER */
+/* ABOUT, CONTACT AND BLOG CONTAINER */
 
 #content-container {
     position: var(--element-position-absolute);
@@ -240,18 +241,24 @@ main {
 
 /* Google Chrome Only: End */
 
-#content-container h2 {
+#content-container h2, #content-container h3 {
     margin: 64px 0 0 54px;
+}
+#content-container h2 {
     font-size: var(--element-size-extralarge);
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--element-color-white);
 }
-
 #content-container p {
     margin: 24px 54px;
     line-height: var(--element-size-large);
     font-size: var(--element-size-small);
+    letter-spacing: 1px;
+    color: var(--element-color-white);
+}
+.content-article h3 {
+    font-size: var(--element-size-large);
     letter-spacing: 1px;
     color: var(--element-color-white);
 }

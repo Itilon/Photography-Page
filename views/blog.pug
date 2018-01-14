@@ -4,3 +4,11 @@ include shared/_navigation
 block body
     main(id="particles-js")
         +navigation('blog')
+        div(id="content-container")
+            h2 Blog
+            each post in posts
+                div(class="content-article")
+                    h3
+                        = post.title
+                    p(class="article-text")
+                        = post.content[0]

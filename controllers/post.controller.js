@@ -17,7 +17,12 @@ const init = (data) => {
     };
 
     const getBlog = (req, res) => {
-        res.render('blog');
+        data.posts.getAll()
+            .then((posts) => {
+                res.render('blog', {
+                    posts: posts
+                });
+            });
     };
 
     const getContact = (req, res) => {
