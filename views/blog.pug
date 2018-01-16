@@ -4,11 +4,22 @@ include shared/_navigation
 block body
     main(id="particles-js")
         +navigation('blog')
-        div(id="content-container")
+        div(id="blog-container")
             h2 Blog
             each post in posts
-                div(class="content-article")
+                div(class="blog-article")
                     h3
-                        = post.title
+                        a(class="article-title" href="/")
+                            = post.title
                     p(class="article-text")
                         = post.content[0]
+                    p(class="article-meta")
+                        | Written on
+                        a(class="article-link" href="/") 
+                            = post.date
+                        | &nbsp;/ By 
+                        a(class="article-link" href="/")
+                            = post.author
+                        | &nbsp;/ Posted in 
+                        a(class="article-link" href="/")
+                            = post.category

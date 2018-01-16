@@ -3,8 +3,12 @@ mixin thumbnail-container(images)
         if images
             div(class="arrow-container")
                 i(class="fa fa-chevron-left fa-5x fa-arrow-custom" aria-hidden="true")
-            each image in images
-                div(class="thumbnail-unit" style="background-image: url(" + image.url + ")")
-                    i(class="fa fa-search fa-3x fa-thumb-custom" aria-hidden="true")
+            each image, index in images
+                if index < 6
+                    div(class="thumbnail-unit" style="background-image: url(" + image.url + ")")
+                        i(class="fa fa-search fa-3x fa-thumb-custom" aria-hidden="true")
+                else
+                    div(class="thumbnail-unit-hidden" style="background-image: url(" + image.url + ")")
+                        i(class="fa fa-search fa-3x fa-thumb-custom" aria-hidden="true")
             div(class="arrow-container")
                 i(class="fa fa-chevron-right fa-5x fa-arrow-custom" aria-hidden="true")
