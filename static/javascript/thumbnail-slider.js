@@ -1,25 +1,53 @@
 $(document).ready(() => {
-    const $visibleThumbnails = $('.thumbnail-unit');
-    const $hiddenThumbnails = $('.thumbnail-unit-hidden');
+    const $rightArrow = $('.fa-chevron-right');
     const $leftArrow = $('.fa-chevron-left');
 
-    $leftArrow.on('click', () => {
-        setTimeout(() => { 
-                console.log($hiddenThumbnails[0]);
-                $hiddenThumbnails.push($visibleThumbnails[0]);
-                console.log($hiddenThumbnails[1]);
-        }, 40);
+    const $visibleThumbnails = $('.thumbnail-unit');
+    const $hiddenThumbnails = $('.thumbnail-unit-hidden');
 
-        for (let i = 0; i < $visibleThumbnails.length - 1; i += 1) {
-            console.log($visibleThumbnails[i]);
-            setTimeout(() => { 
-                $($visibleThumbnails[i]).css('background-image', $($visibleThumbnails[i + 1]).css('background-image'));
-            }, 400);
+    const visibleThumbnailLength = $visibleThumbnails.length;
+    const hiddenThumnailLength = $hiddenThumbnails.length;
+
+    const backgroundImage = 'background-image';
+
+    const thumbnailLoop = (thumbnails, len) => {
+        for (let i = 0; i < len - 1; i += 1) {
+            const newImage = $(thumbnails[i + 1]).css(backgroundImage);
+            $(thumbnails[i]).css(backgroundImage, newImage);
         }
-        setTimeout(() => { 
-                let newImage = $($hiddenThumbnails[0]).css('background-image');
-                $($visibleThumbnails[$visibleThumbnails.length - 1]).css('background-image', newImage);
-                $hiddenThumbnails.splice(0, 1);
-        }, 400);
+    };
+
+    const thumbnailReversedLoop = (thumbnails, len) => {
+        for (let i = len - 1; i > 0; i -= 1) {
+            const newImage = $(thumbnails[i - 1]).css(backgroundImage);
+            $(thumbnails[i]).css(backgroundImage, newImage);
+        }
+    };
+
+    $rightArrow.on('click', () => {
+        const firstImage = $($visibleThumbnails[visibleThumbnailLength - 1]).css(backgroundImage);
+
+        thumbnailReversedLoop($visibleThumbnails, visibleThumbnailLength);
+
+        const firstHiddenImage = $($hiddenThumbnails[hiddenThumnailLength - 1]).css(backgroundImage);
+        $($visibleThumbnails[0]).css(backgroundImage, firstHiddenImage);
+
+        thumbnailReversedLoop($hiddenThumbnails, hiddenThumnailLength);
+
+        $($hiddenThumbnails[0]).css(backgroundImage, firstImage);
+    });
+
+    $leftArrow.on('click', () => {
+
+        const firstImage = $($visibleThumbnails[0]).css(backgroundImage);
+
+        thumbnailLoop($visibleThumbnails, visibleThumbnailLength);
+        
+        const firstHiddenImage = $($hiddenThumbnails[0]).css(backgroundImage);
+        $($visibleThumbnails[visibleThumbnailLength - 1]).css(backgroundImage, firstHiddenImage);
+
+        thumbnailLoop($hiddenThumbnails, hiddenThumnailLength);
+
+        $($hiddenThumbnails[hiddenThumnailLength - 1]).css(backgroundImage, firstImage);
     });
 });

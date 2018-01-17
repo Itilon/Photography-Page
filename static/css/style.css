@@ -131,8 +131,10 @@ main {
     left: calc(50% - 14px);
     color: var(--element-color-grey);
     opacity: 0.8;
+    transition: all 0.6s ease-in-out;
 }
 .fa-arrow-custom:hover {
+    color: var(--element-color-white);
     cursor: pointer;
 }
 .thumbnail-unit {
