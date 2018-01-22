@@ -5,7 +5,7 @@ $(document).ready(() => {
     const $thumbnailUnits = $('.thumbnail-unit');
 
     const slider = () => {
-        $sliderImgs.css('opacity', '0');
+        $sliderImgs.css({'opacity': '0', 'z-index': '0'});
 
         let $currentImg = $($sliderImgs[index]);
         const len = $sliderImgs.length;
@@ -22,8 +22,8 @@ $(document).ready(() => {
             $nextImg = $($sliderImgs[1]);
         }
 
-        $currentImg.css('opacity', '0');
-        $nextImg.css('opacity', '1');
+        $currentImg.css({'opacity': '0', 'z-index': '0'});
+        $nextImg.css({'opacity': '1', 'z-index': '1'});
 
         index++;
 
@@ -32,7 +32,7 @@ $(document).ready(() => {
         }
     };
 
-    let timer = setInterval(slider, 10000);
+    let timer = setInterval(slider, 3000);
 
     $thumbnailUnits.on('click', function() {
         let $this = $(this);

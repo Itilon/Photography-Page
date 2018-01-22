@@ -15,8 +15,8 @@ $(document).ready(() => {
             const $this = $(this);
             const backgroundImg = $this.css('background-image');
             if (backgroundImg === thumbnailBackground) {
-                $sliderImgs.css('opacity', '0');
-                $this.css('opacity', '1');
+                $sliderImgs.css({'opacity': '0', 'z-index': '0'});
+                $this.css({'opacity': '1', 'z-index': '1'});
             }
         });
     });

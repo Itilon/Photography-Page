@@ -20,12 +20,14 @@
             "random": true
         },
         "size": {
-            "value": 4,
+            "value": 2.4,
             "random": true
         },
-        "line-linked": {
+        "line_linked": {
             "enable": true,
-            "distance": 120
+            "distance": 80,
+            "opacity": 0.4,
+            "width": 0.8
         },
         "move": {
             "enable": true,

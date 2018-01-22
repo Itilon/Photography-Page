@@ -9,7 +9,7 @@ block body
             each post in posts
                 div(class="blog-article")
                     h3
-                        a(class="article-title" href="/")
+                        a(class="article-title" href="/blog/" + post._id)
                             = post.title
                     p(class="article-text")
                         = post.content[0]

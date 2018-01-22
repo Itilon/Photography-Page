@@ -14,6 +14,8 @@ const attachTo = (app, controllers) => {
 
         .get('/blog', postController.getBlog)
 
+        .get('/blog/:id', postController.getArticle)
+
         .get('/contact', postController.getContact);
 
     app.use('/', router);

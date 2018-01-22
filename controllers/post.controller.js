@@ -25,6 +25,16 @@ const init = (data) => {
             });
     };
 
+    const getArticle = (req, res) => {
+        const id = req.params.id;
+        data.posts.findById(id)
+            .then((article) => {
+                res.render('article', {
+                    article: article
+                });
+            });
+    };
+
     const getContact = (req, res) => {
         res.render('contact');
     };
@@ -34,6 +44,7 @@ const init = (data) => {
         getAbout,
         getPortfolio,
         getBlog,
+        getArticle,
         getContact
     }
 

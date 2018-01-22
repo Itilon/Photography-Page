@@ -1,3 +1,5 @@
+const { ObjectID } = require('mongodb');
+
 class Data {
     constructor(db, ModelClass, validator) {
         this.db = db;
@@ -10,6 +12,12 @@ class Data {
     getAll() {
         return this.collection.find({})
             .toArray();
+    }
+
+    findById(id) {
+        return this.collection.findOne({
+            _id: new ObjectID(id),
+        });
     }
 
     _getCollectionName() {
