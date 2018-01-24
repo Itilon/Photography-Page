@@ -74,10 +74,13 @@ main {
 
 #navigation h1 {
     font-family: Blessed Day;
-    font-size: var(--element-size-extralarge);
     font-style: var(--element-style-italic);
-    color: var(--element-color-white);
     padding: 20px 0 20px 12px;
+}
+#navigation #page-title {
+    font-size: var(--element-size-extralarge);
+    color: var(--element-color-white);
+    padding: 0;
 }
 #navigation li {
     border-bottom: 1px solid var(--element-border-grey);
@@ -200,10 +203,11 @@ main {
     background-size: cover;
     border-radius: var(--element-border-radius);
     filter: grayscale(64%);
-    transition: filter 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
     cursor: pointer;
 }
 .slider-content:hover {
+    transform: scale(1.02);
     filter: grayscale(0);
 }
 .slider-img {
@@ -327,4 +331,19 @@ main {
 }
 #contact-form input:focus, #contact-form textarea:focus {
     background-color: #494949;
+}
+
+/* ON SMALLER SCREENS */
+
+@media(max-width: 768px) {
+    #navigation {
+        z-index: 2;
+    }
+    #thumbnail-container {
+        display: none;
+    }
+    #slider {
+        left: 64px;
+        width: calc(100vw - 128px);
+    }
 }

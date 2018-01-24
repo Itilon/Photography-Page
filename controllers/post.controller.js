@@ -27,6 +27,11 @@ const init = (data) => {
 
     const getArticle = (req, res) => {
         const id = req.params.id;
+
+        if (id.length !== 24) {
+            return res.redirect('/404');
+        }
+        
         data.posts.findById(id)
             .then((article) => {
                 res.render('article', {

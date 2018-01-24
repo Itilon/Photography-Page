@@ -32,7 +32,7 @@ $(document).ready(() => {
         }
     };
 
-    let timer = setInterval(slider, 3000);
+    let timer = setInterval(slider, 10000);
 
     $thumbnailUnits.on('click', function() {
         let $this = $(this);

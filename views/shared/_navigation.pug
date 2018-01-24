@@ -2,7 +2,8 @@ include _search
 
 mixin navigation(currentPage)
     nav(id="navigation")
-        h1 So Much (For) Beauty
+        h1 
+            a(id="page-title" href="/") So Much (For) Beauty
         ul
             li
                 if currentPage == 'home' 
